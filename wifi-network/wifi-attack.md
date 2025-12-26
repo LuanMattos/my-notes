@@ -4,9 +4,11 @@
 
 ## Check if the card supports replay for brute force
 
-`aireplay-ng -9 -e teddy -a fe80::c18a:b505:4f0c:aae8 wlp6s0mon`
+Please disregard the "<>"
 
+`aireplay-ng -9 -e teddy -a fe80::c18a:b505:4f0c:aae8 <name-your-device (wlan0,wlan1...) >`
 
+## If you don't know the name, open the terminal and type iwconfig in the terminal.
 
 ## EAPOL Filter for Handshake Capture
 
